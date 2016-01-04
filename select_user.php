@@ -1,0 +1,50 @@
+<?php
+require_once"common.php";
+$user_name=trim($_POST['show_user_name']);
+$user_dept=trim($_POST['show_user_dept']);
+$sql="SELECT * FROM users WHERE user_name='";
+if($user_dept==0)
+  $sql=$sql.$user_name."'";
+else
+  $sql=$sql.$user_name."'AND user_dept=".$user_dept;
+$result=mysql_query($sql,$con);
+$array=mysql_fetch_array($result,MYSQL_NUM);
+$dept_id=$array[5];
+$dept_sql="SELECT * FROM dept WHERE dept_id=";
+$dept_sql=$dept_sql.$dept_id;
+$dept_result=mysql_query($dept_sql,$con);
+$dept_array=mysql_fetch_array($dept_result,MYSQL_NUM);
+$dept_name=$dept_array[1];
+$group_id=$array[6];
+$group_sql="SELECT * from usergroup WHERE group_id=";
+$group_sql=$group_sql.$group_id;
+$group_result=mysql_query($group_sql,$con);
+$group_array=mysql_fetch_array($group_result,MYSQL_NUM);
+$group_name=$group_array[1];
+$user_id=$array[0];
+echo"user id number:";
+echo $array[0];
+echo"<br/>";
+echo"user name:";
+echo $array[1];
+echo"<br/>";
+echo"user password:";
+echo $array[2];
+echo"<br/>";
+echo"user sex:";
+echo $array[3];
+echo"<br/>";
+echo"user age:";
+echo $array[4];
+echo"<br/>";
+echo"user department:";
+echo $dept_name;
+echo "<br/>";
+echo"user group:";
+echo $group_name;
+echo "<br/>";
+echo "<br/>";
+echo"<a href='change_user.php? user_id=$user_id'>update user</a>";
+echo"<br/>";
+echo"<a href='delete_user.php? user_id=$user_id'>delete user</a>";
+?>

@@ -1,0 +1,5 @@
+CREATE TABLE groupfunc
+(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  group_id INT NOT NULL,
+func_id INT NOT NULL
+);

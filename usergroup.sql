@@ -1,0 +1,5 @@
+CREATE TABLE usergroup
+( group_id INT NULL AUTO_INCREMENT PRIMARY KEY,
+group_name CHAR(20)NOT NULL,
+group_desc CHAR(50)NOT NULL
+);

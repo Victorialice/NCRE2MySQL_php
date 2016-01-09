@@ -20,7 +20,7 @@ CREATE TABLE `forum_topic`
 /******************************/
 /*	 表名：forum_reply		  */
 /*	 说明：用户回复的记录表	  */
-/******************************/
+
 CREATE TABLE `forum_reply` 
 (
   `id` INT(10) NOT NULL auto_increment,

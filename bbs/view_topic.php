@@ -117,6 +117,12 @@ if (!$_SESSION['username'])
 <?php } ?>
 </fieldset><br>
 <!--内容回复表单，结束-->
+  <form name="delete" method="get" action="delete.php">
+	 <input type="hidden" name="id" value="<?php echo $id; ?>">
+	 <input type="submit" name="Submit" value="删除帖子" class="button">
+	 
+  </form>
+
 
 <?php 
   //如果是管理员用户，则输出“置顶”、“锁定”和“删除”按钮

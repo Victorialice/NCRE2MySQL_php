@@ -1,0 +1,167 @@
+diff --git a/bbs/config.inc.php b/bbs/config.inc.php
+index 5f3defc..7f158d6 100644
+--- a/bbs/config.inc.php
++++ b/bbs/config.inc.php
+@@ -8,9 +8,7 @@
+ 	define('DB_PASSWORD',	 "");		//密码
+ 	define('DB_HOST',		 "localhost");	//数据库主机地址
+ 	define('DB_NAME',		 "php_bbs");	//数据库
+-
+-	//管理员用户
+-	define('ADMIN_USER',	"admin");
++  define('ADMIN_USER',  "aa");
+ 
+ 	//分页设置，每页最多显示的记录数
+ 	define('EACH_PAGE',	 5);
+@@ -31,7 +29,7 @@
+ 		"nigger", "bastard", "tosser", "dipshit",
+ 		"homosexual", "nigga", "gaylord", "retard",
+ 		"asshole", "slut", "prick", "cock", "pussy",
+-		"bitch", "wanking", "bollocks" 
++	
+ 	);
+ 
+ 	/*******************/
+diff --git a/bbs/database.sql b/bbs/database.sql
+index 8d2a9c5..03e3c11 100644
+--- a/bbs/database.sql
++++ b/bbs/database.sql
+@@ -20,7 +20,7 @@ CREATE TABLE `forum_topic`
+ /******************************/
+ /*	 表名：forum_reply		  */
+ /*	 说明：用户回复的记录表	  */
+-/******************************/
++
+ CREATE TABLE `forum_reply` 
+ (
+   `id` INT(10) NOT NULL auto_increment,
+diff --git a/bbs/del_topic.php b/bbs/del_topic.php
+index 626fa18..1e70a5d 100644
+--- a/bbs/del_topic.php
++++ b/bbs/del_topic.php
+@@ -33,4 +33,3 @@
+ 	ExitMessage("你没有管理权限！");
+   }
+ ?>
+-16.7  用户资料查看、编辑功能
+diff --git a/bbs/header.inc.php b/bbs/header.inc.php
+index a443824..121c393 100644
+--- a/bbs/header.inc.php
++++ b/bbs/header.inc.php
+@@ -4,7 +4,7 @@
+ <title>0371zhong</title>
+ <style type="text/css" media="all">
+ body { margin:0px; padding:0px; font:12px verdana, arial, helvetica, sans-serif;}
+-td, legend{ font-size:14px; line-height:16px;}
++td, legend{ font-size:40px; line-height:16px;}
+ p { font-size:12px;}
+ 
+ /* HTML头样式 */
+@@ -18,7 +18,7 @@ p { font-size:12px;}
+ </head>
+ 
+ <body>
+-<h1><img src="logo.jpg" width="100px"/><a target="_blank" href="http://tieba.baidu.com/f?kw=0371&fr=ala0&tpl=5">0371zhong</a></h1>
++
+ 
+ <!-- 头开始 -->
+ <div id="Header">
+diff --git a/bbs/main_forum.php b/bbs/main_forum.php
+index 0a3d721..f94e658 100644
+--- a/bbs/main_forum.php
++++ b/bbs/main_forum.php
+@@ -35,9 +35,9 @@
+ ?>
+ 
+ <table width="100%" border="0" align="center" 
+-	cellpadding="3" cellspacing="1" bgcolor="#111">
++	cellpadding="1" cellspacing="1" bgcolor="#111">
+ <tr bgcolor="#E6E6E6">
+-<td width="60%" align="center"><strong>帖子</strong></td>
++<td width="60%"  align="center"><strong>帖子</strong></td>
+ <td width="8%" align="center"><strong>访问量</strong></td>
+ <td width="8%" align="center"><strong>回复数</strong></td>
+ <td width="24%" align="center"><strong>日期</strong></td>
+diff --git a/bbs/view_topic.php b/bbs/view_topic.php
+index 1298a8a..04b3d9a 100644
+--- a/bbs/view_topic.php
++++ b/bbs/view_topic.php
+@@ -117,6 +117,12 @@ if (!$_SESSION['username'])
+ <?php } ?>
+ </fieldset><br>
+ <!--内容回复表单，结束-->
++  <form name="delete" method="get" action="delete.php">
++	 <input type="hidden" name="id" value="<?php echo $id; ?>">
++	 <input type="submit" name="Submit" value="删除帖子" class="button">
++	 
++  </form>
++
+ 
+ <?php 
+   //如果是管理员用户，则输出“置顶”、“锁定”和“删除”按钮
+diff --git a/cmd.sh b/cmd.sh
+index 926f15d..3a715a5 100644
+--- a/cmd.sh
++++ b/cmd.sh
+@@ -1,6 +1,5 @@
+ the command to start http server:
+ bob@Vostro:php$ sudo /usr/local/nginx/sbin/nginx 
+-
+ the command to start php-cgi:
+ bob@Vostro:php$ php-cgi -b 127.0.0.1:9000
+ 
+diff --git a/delete_user.php b/delete_user.php
+index 3e5883e..ccd0efc 100644
+--- a/delete_user.php
++++ b/delete_user.php
+@@ -3,6 +3,7 @@
+ <head><title>delete user</title>
+ </head>
+ <body>
++<a href="/asdfasdf" id="result_logo" onmousedown="return c({'fm':'tab','tab':'logo'})">asdddddddddddddddddd</a>
+ <?php
+ $user_id=trim($_GET['user_id']);
+ $sql="DELETE FROM users WHERE user_id=";
+diff --git a/picquote.html b/picquote.html
+index 5245c6a..437b6f8 100644
+--- a/picquote.html
++++ b/picquote.html
+@@ -4,7 +4,7 @@
+     how to quote a picture<br>
+     <img src="../tulip.jpg" width="64"height="123"alt="tulip img"><br>
+     <img src="../tulip.jpg" width="100"alt="tulip img"><br>
+-    <img src="../tulip.jpg" width="200" height="180"alt="tulip img"><br>
++    <img src="../tulip.jpg" width="200" height="180"><br>
+     this is a quote
+   </body>
+ </html>
+diff --git a/picture.html b/picture.html
+index 5469d62..1ea2d6e 100644
+--- a/picture.html
++++ b/picture.html
+@@ -2,7 +2,7 @@
+   <head><title>add a picture</title></head>
+     <body>
+       <center>
+-      <img src="picture.jpg">
++      <img src="gril.jpg">
+       <p>web can be colorfully</p>
+     </center>
+     </body>
+diff --git a/picture.jpg b/picture.jpg
+deleted file mode 100644
+index 2181ca3..0000000
+Binary files a/picture.jpg and /dev/null differ
+diff --git a/update_user.php b/update_user.php
+index 4bf61c9..1dfafa9 100644
+--- a/update_user.php
++++ b/update_user.php
+@@ -7,7 +7,7 @@ $user_sex=trim($_POST['user_sex']);
+ $user_age=trim($_POST['user_age']);
+ $user_dept=trim($_POST['user_dept']);
+ $user_group=trim($_POST['user_group']);
+-$sql="UPDATE users SET users_name='".$user_name."',user_password='".$user_password."',user_sex='".$user_sex."',user_age=$user_age,user_dept=$user_dept,user_group=$user_group WHERE user_id=";
++$sql="UPDATE users SET user_name='".$user_name."',user_password='".$user_password."',user_sex='".$user_sex."',user_age=$user_age,user_dept=$user_dept,user_group=$user_group WHERE user_id=";
+   $sql=$sql.$user_id;
+ if(mysql_query($sql,$con))
+   echo"update user successfully!<br>";

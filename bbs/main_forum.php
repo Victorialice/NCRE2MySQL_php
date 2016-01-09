@@ -37,12 +37,11 @@
 <table width="100%" border="0" align="center" 
 	cellpadding="3" cellspacing="1" bgcolor="#111">
 <tr bgcolor="#E6E6E6">
-<td width="60%" align="center"><strong>帖子</strong></td>
+<td width="60%"  align="center"><strong>帖子</strong></td>
 <td width="8%" align="center"><strong>访问量</strong></td>
 <td width="8%" align="center"><strong>回复数</strong></td>
 <td width="24%" align="center"><strong>日期</strong></td>
 </tr>
-
 <?php
   //循环输出输出记录列表
   while($rows=mysql_fetch_array($result))
@@ -50,7 +49,10 @@
 ?>
 <tr bgcolor="#FFFFFF">
   <td>
-
+<form name="delete" method="get" action="delete.php">
+<input type="hidden" name="id" value="<?php echo $rows['id']; ?>">
+<input type="submit" name="submit" value="delete" class="button">
+</form>
 <?php
 	//如果是“置顶”的记录
 	if ($rows['sticky'] == "1")
@@ -66,7 +68,7 @@
 ?>
 	<a href="view_topic.php?id=<?php echo $rows['id']; ?>"><?php echo $rows['topic']; ?></a>
   </td>
-  <td align="center">
+<td align="center">
 	  <?php 
 		echo $rows['view'];  //浏览量
 	  ?>

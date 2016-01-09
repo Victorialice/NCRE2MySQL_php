@@ -1,3 +1,8 @@
+<style type="text/css">
+#detail{
+ width: 1900px;
+}
+</style>
 <?php
   /***********************************/
   /*      ÎÄ¼þÃû£ºcreate_topic.php   */

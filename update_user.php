@@ -7,7 +7,7 @@ $user_sex=trim($_POST['user_sex']);
 $user_age=trim($_POST['user_age']);
 $user_dept=trim($_POST['user_dept']);
 $user_group=trim($_POST['user_group']);
-$sql="UPDATE users SET users_name='".$user_name."',user_password='".$user_password."',user_sex='".$user_sex."',user_age=$user_age,user_dept=$user_dept,user_group=$user_group WHERE user_id=";
+$sql="UPDATE users SET user_name='".$user_name."',user_password='".$user_password."',user_sex='".$user_sex."',user_age=$user_age,user_dept=$user_dept,user_group=$user_group WHERE user_id=";
   $sql=$sql.$user_id;
 if(mysql_query($sql,$con))
   echo"update user successfully!<br>";

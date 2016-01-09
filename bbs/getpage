@@ -1,0 +1,24 @@
+<?php
+  /**************************************/
+  /*		文件名：main_forum.php		*/
+  /*		功能：论坛主页面			*/
+  /**************************************/
+
+  require('config.inc.php');
+
+  //取得当前页数
+  $page=$_GET['page'];
+
+  //每页最多显示的记录数
+  $each_page = EACH_PAGE;
+
+  //计算页面开始位置
+  if(!$page || $page == 1)
+  {
+	$start = 0;
+  }else{
+	$offset = $page - 1;
+	$start = ($offset * $each_page);
+  }
+?>
+

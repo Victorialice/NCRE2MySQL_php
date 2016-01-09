@@ -8,9 +8,7 @@
 	define('DB_PASSWORD',	 "");		//密码
 	define('DB_HOST',		 "localhost");	//数据库主机地址
 	define('DB_NAME',		 "php_bbs");	//数据库
-
-	//管理员用户
-	define('ADMIN_USER',	"admin");
+  define('ADMIN_USER',  "aa");
 
 	//分页设置，每页最多显示的记录数
 	define('EACH_PAGE',	 5);
@@ -31,7 +29,7 @@
 		"nigger", "bastard", "tosser", "dipshit",
 		"homosexual", "nigga", "gaylord", "retard",
 		"asshole", "slut", "prick", "cock", "pussy",
-		"bitch", "wanking", "bollocks" 
+	
 	);
 
 	/*******************/

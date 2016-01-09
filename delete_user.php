@@ -3,6 +3,7 @@
 <head><title>delete user</title>
 </head>
 <body>
+<a href="/asdfasdf" id="result_logo" onmousedown="return c({'fm':'tab','tab':'logo'})">asdddddddddddddddddd</a>
 <?php
 $user_id=trim($_GET['user_id']);
 $sql="DELETE FROM users WHERE user_id=";

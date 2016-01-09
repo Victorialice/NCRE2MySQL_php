@@ -22,7 +22,6 @@ if(mysql_errno())
 ?>
 
 <?php
-  //查询用户资料
   $sql="SELECT * FROM posts WHERE id= $_GET[id]";
   $result=mysql_query($sql);
   $rows=mysql_fetch_array($result);

@@ -33,6 +33,7 @@ $sql="select * from posts";
     echo "<td>".$rows["title"]."</td>";
     echo "<td>".$rows["content"]."</td>";
     echo "<td><a href='posts_show.php?id=$rows[id]'>Show</a></td>";
+    echo "<td><a href='posts_edit.php?id=$rows[id]'>Edit</a></td>";
   }
 ?>
   <a href="posts_new.php">create a post</a>

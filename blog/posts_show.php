@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <!-- saved from url=(0029)http://localhost:3000/posts/1 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Blog</title>
+<style type="text/css">
+  #comment_body{
+   width: 800px;
+  } 
+</style>
 </head>
 <body style="background: #EEEEEE;">
 
@@ -66,7 +73,7 @@ if(mysql_errno())
 </p>
 
 <p>
-<a href="http://localhost:3000/posts/1/comments/4" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy Comment</a>
+<a href="comment_destory.php?id=<?php echo $rows[id]?>">Destroy Comment</a>
 </p>
 </div>
 <?php 
@@ -78,9 +85,11 @@ if(mysql_errno())
 ?>
 <h2>Add a comment:</h2>
 
-<form accept-charset="UTF-8" action="posts_comment.php" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="9xuwyVq6WHbPSVXfYCPdQqemsgtIpezgD/sjD9+uunw="></div>
+<form accept-charset="UTF-8" action="posts_comment.php" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline">
+<input name="utf8" type="hidden" value="✓">
+<input name="authenticity_token" type="hidden" value="9xuwyVq6WHbPSVXfYCPdQqemsgtIpezgD/sjD9+uunw="></div>
 
-<?php $id=$_GET['id']; ?>
+<?php $id=$_GET[id]; ?>
  <input name="id" type="hidden" value="<? echo $id; ?>">
 
   <div class="field">

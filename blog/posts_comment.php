@@ -17,6 +17,11 @@ if(mysql_errno())
 $commenter=$_POST['comment']['commenter'];
 $body=$_POST['comment']['body'];
 $post_id=$_POST['id'];
+$post_id=$_POST['id'];
+
+//echo $_POST['authenticity_token'];
+//echo $_POST['utf7'];
+
 $sql="INSERT INTO comments(commenter,body,post_id,created_at,updated_at) 
   VALUES('$commenter','$body','$post_id',NOW(),NOW())";
 //echo $sql;

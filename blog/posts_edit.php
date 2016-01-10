@@ -51,8 +51,8 @@ if(mysql_errno())
   </div>
 </form>
 
-<a href="http://localhost:3000/posts/1">Show</a> |
-<a href="http://localhost:3000/posts">Back</a>
+<a href="posts.php">Show</a> |
+<a href="posts_show.php">Back</a>
 
 
 

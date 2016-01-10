@@ -26,7 +26,7 @@
   </div>
 </form>
 
-<a href="http://localhost/blog/posts.html">Back</a>
+<a href="posts.php">Back</a>
 
 
 

@@ -98,8 +98,8 @@ if(mysql_errno())
 
 <br>
 
-<a href="http://localhost:3000/posts/1/edit">Edit Post</a> |
-<a href="http://localhost:3000/posts">Back to Posts</a> |
+<a href="posts_edit.php">Edit Post</a> |
+<a href="posts.php">Back to Posts</a> |
 
 
 

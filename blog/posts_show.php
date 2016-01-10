@@ -78,7 +78,11 @@ if(mysql_errno())
 ?>
 <h2>Add a comment:</h2>
 
-<form accept-charset="UTF-8" action="http://localhost:3000/posts/1/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="9xuwyVq6WHbPSVXfYCPdQqemsgtIpezgD/sjD9+uunw="></div>
+<form accept-charset="UTF-8" action="posts_comment.php" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="9xuwyVq6WHbPSVXfYCPdQqemsgtIpezgD/sjD9+uunw="></div>
+
+<?php $id=$_GET['id']; ?>
+ <input name="id" type="hidden" value="<? echo $id; ?>">
+
   <div class="field">
   <label for="comment_commenter">Commenter</label><br>
   <input id="comment_commenter" name="comment[commenter]" size="30" type="text">
@@ -88,7 +92,7 @@ if(mysql_errno())
   <textarea cols="40" id="comment_body" name="comment[body]" rows="20"></textarea>
 </div>
 <div class="actions">
-  <input name="commit" type="submit" value="Create Comment">
+  <input name="commit" type="submit" value="Create Comment" >
 </div>
 </form>
 
@@ -100,4 +104,4 @@ if(mysql_errno())
 
 
 
-<
+
